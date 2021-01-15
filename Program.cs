@@ -7,27 +7,19 @@ namespace AllCardsOnDeck
     {
         static void Main(string[] args)
         {
-            int numberOfCardsInDeck = 52;
+            // int numberOfCardsInDeck = 52;
             var suits = new List<string>() { "Clubs", "Hearts", "Spades", "Diamonds" };
-            var faces = new List<string>();
+            var ranks = new List<string>() { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
             var deck = new List<string>();
 
-            for (int suitIndex = 0; suitIndex < suits.Count; suitIndex++)
+            foreach (var suit in suits)
             {
-                string suit = suits[suitIndex];
-            }
-
-            for (int faceIndex = 0; faceIndex < 13; faceIndex++)
-                string card;
-
-            switch (faceIndex)
-            {
+                foreach (var rank in ranks)
+                {
+                    deck.Add($"{rank} of {suit}");
+                }
 
             }
-
-
-
-
             
         }
     }
