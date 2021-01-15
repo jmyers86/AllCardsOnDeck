@@ -17,7 +17,6 @@ namespace AllCardsOnDeck
                 foreach (var rank in ranks)    // Grabs each var in "ranks" then goes back ^ until each var in "suits" is exhausted.
                 {
                     deck.Add($"{rank} of {suit}");    // This creates the deck by adding rank and suit to deck List
-                    // Console.WriteLine($"{rank} of {suit}");
                 }
 
             }
@@ -26,11 +25,9 @@ namespace AllCardsOnDeck
             var numberOfCards = deck.Count;
 
             // for rightIndex from numberOfCards - 1 down to 1 do:
-            for (var rightIndex = numberOfCards - 1; rightIndex >= 1; rightIndex--)   // this I didn't get 
+            for (var rightIndex = numberOfCards - 1; rightIndex >= 1; rightIndex--)   // Setting rightIndex to numberOfCards (52) -1 (51). As long as rightIndex is greater than or equal to 1, subtract 1.
             {
-                // Console.WriteLine(rightIndex);
-
-                //   leftIndex = random integer that is greater than or equal to 0 and LESS than rightIndex. See the section "How do we get a random integer")
+                //   leftIndex = random integer that is greater than or equal to 0 and LESS than rightIndex. See the section "How do we get a random integer"
                 var randomNumberGenerator = new Random();
                 var leftIndex = randomNumberGenerator.Next(rightIndex);
                 //   Now swap the values at rightIndex and leftIndex by doing this:
@@ -42,9 +39,8 @@ namespace AllCardsOnDeck
                 var rightCard = deck[rightIndex];
                 deck[rightIndex] = leftCard;
                 deck[leftIndex] = rightCard;
-                // Console.WriteLine(leftCard);
-            }
-            Console.WriteLine($"{deck[0]}, {deck[1]}"); 
+            } // This was a lot of fun.
+            Console.WriteLine($"{deck[0]}, {deck[1]}");
         }
     }
 }
